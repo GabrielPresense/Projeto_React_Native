@@ -20,9 +20,11 @@ export default function Form(){
          setHeight(null)
          setWeight(null)
          setMessageImc("Seu imc é igual:")
-         setMessageButton("Seu Calcular novamente:")
+         setMessageButton("Calcular novamente:")
          return
       }
+      setImc(null)
+      setTextButton
    }
 
     return(
