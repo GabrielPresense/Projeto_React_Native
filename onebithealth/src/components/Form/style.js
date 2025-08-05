@@ -1,11 +1,11 @@
 import { StyleSheet } from "react-native";
 
-const style = StyleSheet.create({
+const styles = StyleSheet.create({
  formContext: {
     width:"100%",
     height:"100%",
     botton:0,
-    backgroundColor:"#fffff",
+    backgroundColor:'#ffffff',
     alignItems:"center",
     borderTopLeftRadius:30,
     borderTopRightRadius:30,
@@ -18,7 +18,7 @@ const style = StyleSheet.create({
     padding: 10,
  },
  formLabel:{
-    color:"#00000",
+    color:"#000000",
     fontSize:18,
     paddingLeft: 20,
  },
@@ -39,12 +39,12 @@ const style = StyleSheet.create({
     paddingTop:14,
     paddingBottom:14,
     marginLeft:12,
-    marginTop:30,
+    margin:30,
  },
  textButtonCalculator:{
     fontSize: 20,
-    color:"#fffff",
+    color:'#ffffff',
  }
 });
 
-export default style
+export default styles

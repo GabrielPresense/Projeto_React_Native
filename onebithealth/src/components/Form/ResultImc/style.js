@@ -1,9 +1,9 @@
 import { StyleSheet } from "react-native";
 
-const style = StyleSheet.create({
+const styles = StyleSheet.create({
  resultImc: {
     flex:1,
-    marginTop: 15,
+    marginTop:15,
     paddingTop:60,
     borderRadius:50,
     alignItems:"center",
@@ -21,4 +21,4 @@ const style = StyleSheet.create({
  }
 });
 
-export default style
+export default styles
