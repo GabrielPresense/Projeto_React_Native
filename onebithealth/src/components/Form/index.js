@@ -1,7 +1,14 @@
 import React, { useState } from "react"
-import { View, Text, TextInput, TouchableOpacity } from "react-native"
+import {
+   Text,
+   TextInput,
+   TouchableOpacity,
+   View,
+   Vibration
+   } from "react-native"
 import styles from "./style";
 import ResultImc from "./ResultImc";
+
 
 export default function Form(){
 
@@ -10,28 +17,40 @@ export default function Form(){
    const [messageImc, setMessageimc]= useState("preencha o peso e altura");
    const [imc, setImc]= useState(null)
    const [textButton, setButton]= useState("Calcular")
+   const [errorMessage, setErrorMessage] = useState(null)
 
    function imcCalculator(){
       return setImc((weight/(height*height)).toFixed(2))
    }
 
+   function verificationImc(){
+      if(imc == null){
+         Vibration.vibrate();
+         setErrorMessage("campo obrigatório*")
+      }
+   }
+
    function validationImc(){
-      if(weight != null && height != null){
+      if (weight != null && height != null) {
          imcCalculator()
          setHeight(null)
          setWeight(null)
          setMessageImc("Seu imc é igual:")
-         setMessageButton("Calcular novamente:")
+         setMessageBotton("Calcular novamente:")
+         setErrorMessage(null)
          return
       }
+      verificationImc()
       setImc(null)
-      setTextButton
+      setTextButton("Calcular")
+      setMessageImc("preencha o peso e altura")
    }
 
     return(
        <View style={styles.formContext}>
          <View style={styles.form}>
             <Text style={styles.formLabel}>Altura</Text>
+            <Text style={styles.errorMessage}>{errorMessage}</Text>
             <TextInput
                style={styles.input}
                onChangeText={setHeight}
@@ -41,6 +60,7 @@ export default function Form(){
             />
 
             <Text style={styles.formLabel}>Peso</Text>
+            <Text style={styles.errorMessage}>{errorMessage}</Text>
             <TextInput
                style={styles.input}
                onChangeText={setWeight}
