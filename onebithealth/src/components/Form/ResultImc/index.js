@@ -18,14 +18,14 @@ export default function ResultImc(props){
                     onPress={onShare}
                     style={styles.shared}
                 >
-                  <Text style={styles.shareText}>Share</Text>
+                  <Text style={styles.sharedText}>Share</Text>
                 </TouchableOpacity>
                 :
                 <View/>
                 }
             </View>
-            <Text style={styles.information}>{props.messageResultImc}</Text>
-            <Text style={styles.numberImc}>{props.resultImc}</Text>
+            <Text style={styles.titleResultImc}>{props.messageResultImc}</Text>
+            <Text style={styles.re}>{props.resultImc}</Text>
         </View>
     );
 }

@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useState } from "react";
 import {
    Text,
    TextInput,
@@ -8,17 +8,17 @@ import {
    Pressable,
    Keyboard,
    } from "react-native"
-import styles from "./style";
 import ResultImc from "./ResultImc";
+import styles from "./style";
 
 
-export default function Form(){
+export default function Form(props){
 
-   const [height, setHeight]= useState(null)
-   const [weight, setWeight]= useState(null)
-   const [messageImc, setMessageImc]= useState("preencha o peso e altura");
-   const [imc, setImc]= useState(null)
-   const [textButton, setTextButton]= useState("Calcular")
+   const [height, setHeight]= React.useState(null);
+   const [weight, setWeight]= React.useState(null);
+   const [messageImc, setMessageImc]= useState(null);
+   const [imc, setImc]= useState(null);
+   const [textButton, setTextButton]= useState("Calcular");
    const [errorMessage, setErrorMessage] = useState(null)
 
 
@@ -40,14 +40,16 @@ export default function Form(){
          setHeight(null)
          setWeight(null)
          setMessageImc("Seu imc é igual:")
-         setMessageBotton("Calcular:")
+         setTextBotton("Calcular Novamente")
          setErrorMessage(null)
-         return
       }
-      verificationImc()
-      setImc(null)
-      setTextButton("Calcular novamente")
-      setMessageImc("preencha o peso e altura")
+      else{
+         verificationImc()
+         setImc(null)
+         setTextButton("Calcular")
+         setMessageImc("preencha o peso e altura")
+      }
+    
    }
 
     return(
@@ -62,7 +64,6 @@ export default function Form(){
                placeholder="Ex. 1.75"
                keyboardType="numeric"
             />
-
             <Text style={styles.formLabel}>Peso</Text>
             <Text style={styles.errorMessage}>{errorMessage}</Text>
             <TextInput
@@ -74,9 +75,7 @@ export default function Form(){
             />
             <TouchableOpacity
                style={styles.buttonCalculator}
-               onPress={() =>{
-                  validationImc()
-               }}
+               onPress={() =>{validationImc()}}
             >
                <Text style={styles.textButtonCalculator}>{textButton}</Text>
             </TouchableOpacity>

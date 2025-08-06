@@ -10,7 +10,9 @@ export default function App() {
       <Form/>
     </View>
   );
-}const styles = StyleSheet.create({
+}
+
+const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#e0e5e5',
