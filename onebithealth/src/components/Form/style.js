@@ -1,4 +1,5 @@
 import { StyleSheet } from "react-native";
+import ResultImc from "./ResultImc";
 
 const styles = StyleSheet.create({
  formContext: {
@@ -49,6 +50,20 @@ const styles = StyleSheet.create({
  exhibitionResultImc:{
    width:"100%",
    height:"54%"
+ },
+ listImcs:{
+   marginTop:20,
+ },
+ ResultImcItem:{
+   fontSize:26,
+   color:"red",
+   height: 50,
+   width:"100%",
+   paddingRight: 20,
+ },
+ textResultItemList:{
+   fontSize:16,
+   color:"ws!"
  }
 });
 
